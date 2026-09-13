@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <title>Solicitud Laboral</title>
+    <link rel="stylesheet" href="./css/styles4.css">
+</head>
+<body>
+
+    <form action="#" method="POST">
+        <h1>Formulario de Solicitud Laboral</h1>
+        <p class="desc">Rellene la solicitud con sus datos.</p>
+        <div class="form-field">
+            <label for="nombre">Nombre completo<span class="req">*</span></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Darlyn Johan Perez Burbano" required>
+            <br><br>
+
+            <label for="correo">Correo electrónico<span class="req">*</span></label>
+            <input type="email" id="correo" name="correo" placeholder="correo1@dom.co" required>
+            <br><br>
+
+            <label for="telefono">Teléfono<span class="req">*</span></label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" required>
+            <br><br>
+
+            <label for="puesto">Puesto al que aplica<span class="req">*</span></label>
+            <input type="text" id="puesto" name="puesto" placeholder="Ciberseguridad" required>
+            <br><br>
+
+            <label for="cv">Adjuntar CV<span class="req">*</span></label>
+            <input type="file" id="cv" name="cv" accept=".pdf" required>
+            <p>Formato sugerido: PDF</p>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="button-send">Enviar</button>
+            <button type="reset" class="button-clean"> Limpiar</button>
+        </div>
+    </form>
+
+</body>
+</html>

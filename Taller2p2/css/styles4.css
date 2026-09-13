@@ -1,0 +1,124 @@
+/* variables de estilos */
+:root{
+    --primary: #ffd4a5;
+    --second: #32abda;
+    --third: #000000;
+
+    --text: #000000;
+    --input: #a0e1fa;
+    
+
+    --border: #000000;
+    --form-line: #000000;
+    --background-soft: #ffd4a5;
+    --back: #32abda;
+
+    --required: #c62828;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+
+    --shadow: 0 24px 70px rgba(15, 40, 80, 0.10);
+
+    --container: 980px;
+
+}
+* {
+    box-sizing: border-box;
+}
+h1,h5 {
+  color: var(--text);
+}
+p {
+  color: #4a4a4a;
+  font-size: 10px;
+}
+.req{
+  color:var(--required);
+}
+.desc{
+  color:var(--small);
+  font-size: small;
+}
+input::placeholder {
+    color: #414141;
+}
+textarea::placeholder {
+    color: #414141;
+}
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: var(--back);
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 100%;
+    max-width: 560px;
+    background: var(--background-soft);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--form-line);
+}
+
+label {
+  font-weight: bold;
+  color: var(--navy);
+}
+
+input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+button {
+  background-color: var(--navy);
+  color: var(--text);
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--back);
+  color: var(--navy);
+}
+
+.button-send,
+.button-clean {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.button-send {
+    border:1px solid var(--form-line);
+    background: var(--input);
+    color: var(--text);
+}
+
+.button-clean {
+    background: #b1e9ff;
+    color: var(--text);
+    border: 1px solid var(--form-line);
+}
+
+.form-actions {
+    justify-content: center;
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
