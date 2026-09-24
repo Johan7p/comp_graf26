@@ -1,0 +1,218 @@
+:root {
+    --primary: #000000;
+    --second: #efbf04;
+    --third: #ffffff;
+    --third-hover: #ffe066;
+    --fourth: #cf010b;
+    --text: #16213a;
+    --border: #667085;
+    --shadow: 0 20px 50px rgba(15, 40, 80, .08);
+    --container: 1440px;
+    --container2: 1240px;
+}
+ 
+* { box-sizing: border-box; }
+ 
+html { scroll-behavior: smooth; }
+ 
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    color: var(--text);
+    background: #000;
+}
+ 
+a { color: inherit; text-decoration: none; }
+ 
+.container {
+    width: min(calc(100% - 48px), var(--container));
+    margin-inline: auto;
+}
+.container2 {
+    width: min(calc(100% - 48px), var(--container2));
+    margin-inline: auto;
+}
+ 
+/* ---------- Encabezado y menú ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, .96);
+    border-bottom: 1px solid var(--second);
+    backdrop-filter: blur(14px);
+}
+.cont-header {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+.brand_logo { display: block; width: auto; height: 56px; max-width: 235px; object-fit: contain; }
+.nav { display: flex; align-items: center; gap: 24px; }
+.nav a { color: var(--third); font-weight: 600; }
+.nav a:hover { color: var(--third-hover); }
+.nav-cta {
+    padding: 11px 18px;
+    border-radius: 10px;
+    background: var(--second);
+    color: #000 !important;
+}
+ 
+/* ---------- Inicio (hero) ---------- */
+.hero { background: var(--primary); padding: 100px 0 115px; overflow: hidden; }
+.back-link {
+    display: block;
+    margin-bottom: 22px;
+    color: rgba(255, 255, 255, .7);
+    font-weight: 600;
+}
+.back-link:hover { color: var(--third); }
+.eyebrow { color: var(--third); font-weight: 800; letter-spacing: .08em; }
+.hero h1 {
+    margin: 18px 0 0;
+    color: var(--second);
+    font-size: clamp(3.2rem, 5vw, 5rem);
+    line-height: 1.02;
+}
+.hero-desc { color: var(--third); font-size: 1.12rem; line-height: 1.75; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.first-action, .second-action { padding: 14px 20px; border-radius: 10px; font-weight: 700; }
+.first-action { background: var(--second); color: #000; }
+.second-action { border: 1px solid var(--second); color: var(--second); }
+ 
+/* ---------- Franjas decorativas (services y about) ---------- */
+.services,
+.about {
+    position: relative;
+    background: var(--third);
+}
+.services::before,
+.services::after,
+.about::before,
+.about::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 14px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0 30px,
+        #c9a24a 30px 60px,
+        #b81c2e 60px 90px
+    );
+}
+.services::before, .about::before { top: 0; }
+.services::after,  .about::after  { bottom: 0; }
+ 
+/* ---------- Qué es / Qué incluye ---------- */
+.services { padding: 95px 0; }
+.services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.service-card {
+    padding: 20px 36px 36px;
+    border: 2px dashed var(--primary);
+    background: var(--third);
+    transition: .2s;
+}
+.service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.service-card h3 { margin: 0 0 12px; font-size: 1.5rem; }
+.service-card p { line-height: 1.7; }
+.service-card ul { margin: 0; padding: 0; list-style: none; }
+.service-card li {
+    position: relative;
+    padding: 10px 0 10px 22px;
+    border-bottom: 1px dotted var(--border);
+}
+.service-card li:last-child { border-bottom: 0; }
+.service-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 9px;
+    height: 9px;
+    background: var(--fourth);
+}
+ 
+/* ---------- Estilos disponibles ---------- */
+.estilos { padding: 80px 0; background: var(--primary); }
+.estilos h2 {
+    margin: 0 0 32px;
+    color: var(--second);
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    line-height: 1.05;
+}
+.estilos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+}
+.estilo { padding: 22px 0; border-bottom: 3px dashed var(--second); }
+.estilo h3 { margin: 0 0 6px; color: var(--third); font-size: 1.4rem; }
+.estilo p { margin: 0; color: rgba(255, 255, 255, .7); line-height: 1.6; }
+ 
+/* ---------- Recomendaciones ---------- */
+.about { padding: 60px 0; }
+.about-copy h1 {
+    margin: 18px 0 0;
+    color: var(--primary);
+    font-size: clamp(2.2rem, 5vw, 5rem);
+    line-height: 1.02;
+}
+.tips-list { margin: 24px 0 0; padding: 0; list-style: none; }
+.tips-list li {
+    padding: 16px 0;
+    border-bottom: 3px dashed var(--second);
+    color: var(--primary);
+    font-size: 1.12rem;
+    line-height: 1.6;
+}
+ 
+/* ---------- Llamado a la acción ---------- */
+.cta { padding: 80px 0; background: var(--third); }
+.cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 20px;
+    padding: 42px;
+    border-radius: 20px;
+    background: var(--second);
+    color: #000;
+}
+.section-label { color: var(--primary); font-weight: 800; letter-spacing: .08em; }
+.cta-box h2 { margin: 10px 0 0; max-width: 780px; }
+.cta-button {
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 800;
+    white-space: nowrap;
+}
+ 
+/* ---------- Pie de página ---------- */
+
+.social-media { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.footer { padding: 60px 0; background: var(--primary); color: var(--second); }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; }
+.footer p, .footer a { color: rgba(255, 255, 255, .7); }
+ 
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+    .cont-header { flex-direction: column; align-items: flex-start; padding-block: 16px; gap: 14px; }
+    .nav { flex-wrap: wrap; gap: 14px 20px; }
+    .services-grid, .estilos-grid, .footer-grid { grid-template-columns: 1fr; }
+    .cta-box { flex-direction: column; align-items: flex-start; }
+}
+ 
+@media (max-width: 640px) {
+    .container, .container2 { width: min(calc(100% - 28px), var(--container)); }
+    .hero { padding: 70px 0; }
+    .hero h1 { font-size: 2.75rem; }
+    .service-card { padding: 20px 26px 26px; }
+}
+ 
